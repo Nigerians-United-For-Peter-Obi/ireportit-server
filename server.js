@@ -17,8 +17,15 @@ server.use(express.static(path.join(__dirname, 'client', 'dist')))
 
 
 // Version 1 Router (API) End Points
+
+
+//load routes
+const authRoute = require('./routers/auth.route');
+
 const v1Router = require('./routers/v1')
+
 server.use('/api/v1', v1Router)
+server.use('/api/v1', authRoute);
 
 // Version 2 Router (API) End Points
 const v2Router = require('./routers/v2')
