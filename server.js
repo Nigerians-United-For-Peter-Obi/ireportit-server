@@ -15,7 +15,6 @@ server.use(express.static(path.join(__dirname, 'public')))
 server.use(express.static(path.join(__dirname, 'client', 'dist')))
 
 
-
 // Version 1 Router (API) End Points
 const v1Router = require('./routers/v1')
 server.use('/api/v1', v1Router)
