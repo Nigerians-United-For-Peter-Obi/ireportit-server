@@ -27,8 +27,6 @@ server.use(
     helmet.referrerPolicy(),
     helmet.xssFilter()
 )
-app.use(compression());
-
 
 // Version 1 Router (API) End Points
 const v1Router = require('./routers/v1')
