@@ -24,8 +24,8 @@ const v2Router = require('./routers/v2')
 server.use('/api/v2', v2Router)
 
 // Every other Routes not included in V1 or V2
-server.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
+server.get('/', (req, res) => {
+    res.status(200).json({ app: 'NUPO Server', domain: '', status: true })
 })
 
 const port = process.env.PORT || 4000
