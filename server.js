@@ -1,7 +1,6 @@
 const express = require('express')
 const server = express()
 var path = require('path')
-var axios = require('axios')
 const cors = require('cors')
 const helmet = require('helmet')
 
@@ -17,7 +16,12 @@ server.use(express.static(path.join(__dirname, 'public')))
 
 // Server Security is
 // important to us
-server.use(cors())
+server.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST'],
+    optionsSuccessStatus: 200
+}))
+// helmetting the http//headers
 server.use(
     helmet.frameguard(),
     helmet.hsts(),
